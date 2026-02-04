@@ -1,0 +1,576 @@
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin display($align, $justify, $direction, $gap) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
+@mixin h1() {
+  width: clamp(280px, 50vw, 500px);
+  text-align: center;
+  font-size: clamp(1.3rem, 5vw, 30px);
+  color: white;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: raleway;
+  src: url(./assets/Raleway-VariableFont_wght.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+}
+
+#root {
+  width: 100%;
+  font-family: raleway;
+  @include display(flex-start, center, row, 0px);
+  background-color: black;
+
+  .app {
+    width: 100%;
+    min-height: 100vh;
+    max-width: 1440px;
+    background-color: hsl(219, 30%, 18%);
+    @include display(center, flex-start, column, 0px);
+
+    header {
+      @include size(100%, 70px);
+
+      nav {
+        @include size(100%, 100%);
+        @include display(center, space-between, row, 0px);
+        padding: 0px 1.5rem;
+
+        .logo {
+          @include size(80px, 25px);
+
+          img {
+            @include size(100%, 100%);
+          }
+        }
+
+        .head-links {
+          @include size(200px, 100%);
+          font-size: 0.9rem;
+          @include display(center, space-between, row, 0px);
+
+          a {
+            text-decoration: none;
+            color: white;
+          }
+        }
+      }
+    }
+
+    main {
+      width: 100%;
+      min-height: 100vh;
+      padding: 2rem;
+      position: relative;
+      z-index: 0;
+      @include display(center, flex-start, column, 3rem);
+
+      .content-image {
+        width: 100%;
+        max-width: 600px;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .top-text-content {
+        margin-top: -20px;
+        width: 100%;
+        max-width: 600px;
+        padding: 1rem;
+        @include display(center, center, column, 1rem);
+
+        h1 {
+          @include h1();
+        }
+
+        p {
+          color: white;
+          line-height: 1.4;
+          width: 80%;
+          font-size: clamp(0.7rem, 1.3vw, 20px);
+          text-align: center;
+        }
+
+        button {
+          padding: 1rem;
+          width: 100%;
+          max-width: 250px;
+          border-radius: 50px;
+          border: none;
+          color: white;
+          font-size: 0.9rem;
+          background: linear-gradient(to right, hsl(176, 68%, 64%), hsl(198, 60%, 50%));
+        }
+      }
+
+      .features-elements {
+        margin-top: 50px;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 4rem;
+
+        .feature-element {
+          width: 100%;
+          height: clamp(250px, 15vh, 350px);
+          max-width: 400px;
+          @include display(center, space-around, column, 0px);
+
+          .feature-header {
+            width: 100%;
+            @include display(center, center, column, 1rem);
+
+            h1 {
+              width: 100%;
+              text-align: center;
+              font-size: 1.2rem;
+              color: white;
+              font-weight: 600;
+            }
+
+            p {
+              width: 100%;
+              text-align: center;
+              font-size: 0.9rem;
+              color: white;
+            }
+          }
+        }
+      }
+
+      .content-image2 {
+        width: 100%;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+
+        .content-image2-img {
+          width: 100%;
+          max-width: 600px;
+
+          img {
+            object-fit: cover;
+            @include size(100%, 100%);
+          }
+        }
+
+        .content-image2-contents {
+          width: 100%;
+          max-width: 450px;
+          @include display(flex-start, center, column, 1rem);
+
+          h1 {
+            width: 100%;
+            text-align: start;
+            font-size: clamp(1.3rem, 5vw, 30px);
+            max-width: 350px;
+            color: white;
+            font-weight: 600;
+          }
+
+          p {
+            color: white;
+            text-align: start;
+            font-size: 0.85rem;
+            opacity: 0.9;
+            line-height: 1.4;
+          }
+
+          a {
+            color: hsl(198, 60%, 50%);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            @include display(center, flex-start, row, 8px);
+
+            img {
+              border: none;
+            }
+          }
+        }
+      }
+
+      .review-section {
+        width: 100%;
+        @include display(center, center, row, 2.5rem);
+        flex-wrap: wrap;
+        flex-grow: 1;
+        position: relative;
+        padding: 1rem;
+
+        .quote-image {
+          width: 40px;
+          height: 40px;
+          position: absolute;
+          top: -15px;
+          left: 0;
+          z-index: -1;
+          border: 2px solid blue;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .review-element {
+          width: clamp(320px, 20vw, 400px);
+          box-shadow: 5px 5px 15px hsl(217, 28%, 15%);
+          background-color: hsl(217, 28%, 15%);
+          border-radius: 5px;
+          padding: 2rem 1.5rem;
+          @include display(flex-start, center, column, 1rem);
+
+          .review-description {
+            width: 100%;
+
+            p {
+              color: white;
+              font-size: 0.8rem;
+              line-height: 1.4;
+              opacity: 0.9;
+            }
+          }
+
+          .profile-data {
+            width: 100%;
+            @include display(center, flex-start, row, 7px);
+
+            .profile-image {
+              width: 25px;
+              height: 25px;
+              border-radius: 50%;
+              overflow: hidden;
+
+              img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+              }
+            }
+
+            .profile-data-container {
+              width: 45%;
+              @include display(flex-start, center, column, 0.3rem);
+
+              h3 {
+                font-size: 0.8rem;
+                color: white;
+                font-weight: 500;
+              }
+
+              p {
+                font-size: 0.5rem;
+                color: white;
+                opacity: 0.8;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    footer {
+      margin-top: 10rem;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+      background-color: hsl(216, 53%, 9%);
+      padding: 1rem;
+      @include display(center, flex-start, column, 1rem);
+
+      .access-card {
+        // min-height: 250px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.575);
+        transform: translateY(-50%);
+        background-color: hsl(217, 28%, 15%);
+        padding: 2rem;
+        width: clamp(350px, 50vw, 800px);
+        @include display(center, space-around, column, 1.5rem);
+
+        h1 {
+          color: white;
+          font-weight: 600;
+          font-size: 1.2rem;
+          text-align: center;
+        }
+
+        p {
+          color: white;
+          width: 100%;
+          font-size: 0.9rem;
+          line-height: 1.5;
+          text-align: center;
+        }
+
+        .access-card-buttons {
+          width: 100%;
+          @include display(center, space-around, column, 1.5rem);
+
+          input {
+            width: 100%;
+            border-radius: 50px;
+            padding: 0.9rem;
+            border: none;
+            font-size: 1rem;
+            outline: none;
+            padding-left: 1.5rem;
+          }
+
+          button {
+            width: 100%;
+            border-radius: 50px;
+            padding: 0.9rem;
+            border: none;
+            color: black;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: capitalize;
+            background: linear-gradient(to right, hsl(176, 68%, 64%), hsl(198, 60%, 50%));
+            color: white;
+            transition: all ease 0.2s;
+          }
+
+          button:active {
+            scale: 0.98;
+          }
+        }
+      }
+
+      .footer-contents-section {
+        width: 100%;
+        padding: 1rem;
+        @include display(flex-start, center, column, 1rem);
+
+        .footer-image {
+          width: 170px;
+          height: 50px;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .footer-contents {
+          width: 100%;
+          @include display(center, space-between, column, 4rem);
+
+          .footer-upper-content {
+            width: 100%;
+            // min-width: 500px;
+            @include display(flex-start, center, column, 1rem);
+
+            .location {
+              width: 100%;
+              max-width: 300px;
+              @include display(flex-start, center, row, 1.3rem);
+
+              p {
+                color: white;
+                font-size: 0.9rem;
+                line-height: 1.5;
+                opacity: 0.9;
+              }
+            }
+
+            .contact {
+              width: 100%;
+              max-width: 200px;
+              @include display(center, center, column, 1rem);
+
+              .phone,
+              .email {
+                width: 100%;
+                @include display(center, flex-start, row, 1rem);
+
+                p {
+                  color: white;
+                  opacity: 0.9;
+                  font-family: Arial, Helvetica, sans-serif;
+                  font-size: 0.9rem;
+                }
+              }
+            }
+          }
+
+          .links-container {
+            width: 100%;
+            @include display(flex-start, center, column, 2.5rem);
+
+            .links1,
+            .links2 {
+              width: 100%;
+              max-width: 120px;
+              @include display(flex-start, flex-start, column, 1rem);
+
+              p {
+                color: white;
+              }
+            }
+          }
+
+          .icons-container {
+            width: 100%;
+            max-width: 370px;
+            @include display(center, center, row, 1rem);
+            font-size: 1.8rem;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width:400px) and (max-width:550px) {
+  #root {
+    .app {
+      main {
+        .background-image-effect {
+          top: 7%;
+
+        }
+      }
+    }
+  }
+}
+
+@media (min-width:551px) and (max-width:700px) {
+  #root {
+    .app {
+      main {
+        .background-image-effect {
+          top: 10%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width:700px) and (max-width:880px) {
+  #root {
+    .app {
+      main {
+        .background-image-effect {
+          top: 10%;
+
+          .background-image-container {
+            height: 30vh;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width:650px) and (max-width:900px) {
+  #root {
+    .app {
+      footer {
+        .footer-contents-section {
+          .footer-contents {
+            .footer-upper-content {
+              @include display(center, space-around, row, 0px);
+            }
+
+            .links-container {
+              @include display(center, space-around, row, 0px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width:900px) {
+  #root {
+    .app {
+      main {
+        .background-image-container {
+          top: 10%;
+          background-image: url('./assets/bg-curvy-desktop.svg');
+          background-size: contain;
+        }
+
+        .features-elements {
+          margin: 10px;
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .content-image2 {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0rem;
+        }
+
+        .review-section {
+          .quote-image {
+            left: 16%;
+          }
+        }
+      }
+
+      footer {
+        .access-card {
+          .access-card-buttons {
+            @include display(center, space-around, row, 0.5rem);
+
+            input {
+              max-width: 450px;
+            }
+
+            button {
+              max-width: 180px;
+            }
+          }
+        }
+
+        .footer-contents-section {
+          .footer-contents {
+            @include display(flex-start, flex-start, row, 3rem);
+
+            .footer-upper-content {
+              min-width: 500px;
+              @include display(flex-start, center, row, 2rem);
+            }
+
+            .links-container {
+              @include display(flex-start, center, row, 0px);
+            }
+          }
+        }
+      }
+    }
+  }
+}

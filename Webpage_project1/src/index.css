@@ -1,0 +1,576 @@
+@font-face {
+  font-family: raleway;
+  src: url(./assets/Raleway-VariableFont_wght.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+}
+
+#root {
+  width: 100%;
+  font-family: raleway;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0px;
+  background-color: black;
+}
+#root .app {
+  width: 100%;
+  min-height: 100vh;
+  max-width: 1440px;
+  background-color: hsl(219, 30%, 18%);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 0px;
+}
+#root .app header {
+  width: 100%;
+  height: 70px;
+}
+#root .app header nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 0px;
+  padding: 0px 1.5rem;
+}
+#root .app header nav .logo {
+  width: 80px;
+  height: 25px;
+}
+#root .app header nav .logo img {
+  width: 100%;
+  height: 100%;
+}
+#root .app header nav .head-links {
+  width: 200px;
+  height: 100%;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 0px;
+}
+#root .app header nav .head-links a {
+  text-decoration: none;
+  color: white;
+}
+#root .app main {
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 3rem;
+}
+#root .app main .content-image {
+  width: 100%;
+  max-width: 600px;
+}
+#root .app main .content-image img {
+  width: 100%;
+  height: 100%;
+}
+#root .app main .top-text-content {
+  margin-top: -20px;
+  width: 100%;
+  max-width: 600px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+#root .app main .top-text-content h1 {
+  width: clamp(280px, 50vw, 500px);
+  text-align: center;
+  font-size: clamp(1.3rem, 5vw, 30px);
+  color: white;
+  font-weight: 600;
+}
+#root .app main .top-text-content p {
+  color: white;
+  line-height: 1.4;
+  width: 80%;
+  font-size: clamp(0.7rem, 1.3vw, 20px);
+  text-align: center;
+}
+#root .app main .top-text-content button {
+  padding: 1rem;
+  width: 100%;
+  max-width: 250px;
+  border-radius: 50px;
+  border: none;
+  color: white;
+  font-size: 0.9rem;
+  background: linear-gradient(to right, hsl(176, 68%, 64%), hsl(198, 60%, 50%));
+}
+#root .app main .features-elements {
+  margin-top: 50px;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 4rem;
+}
+#root .app main .features-elements .feature-element {
+  width: 100%;
+  height: clamp(250px, 15vh, 350px);
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  gap: 0px;
+}
+#root .app main .features-elements .feature-element .feature-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+#root .app main .features-elements .feature-element .feature-header h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: 600;
+}
+#root .app main .features-elements .feature-element .feature-header p {
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+  color: white;
+}
+#root .app main .content-image2 {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+#root .app main .content-image2 .content-image2-img {
+  width: 100%;
+  max-width: 600px;
+}
+#root .app main .content-image2 .content-image2-img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+#root .app main .content-image2 .content-image2-contents {
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+#root .app main .content-image2 .content-image2-contents h1 {
+  width: 100%;
+  text-align: start;
+  font-size: clamp(1.3rem, 5vw, 30px);
+  max-width: 350px;
+  color: white;
+  font-weight: 600;
+}
+#root .app main .content-image2 .content-image2-contents p {
+  color: white;
+  text-align: start;
+  font-size: 0.85rem;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+#root .app main .content-image2 .content-image2-contents a {
+  color: hsl(198, 60%, 50%);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 8px;
+}
+#root .app main .content-image2 .content-image2-contents a img {
+  border: none;
+}
+#root .app main .review-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  position: relative;
+  padding: 1rem;
+}
+#root .app main .review-section .quote-image {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: -15px;
+  left: 0;
+  z-index: -1;
+  border: 2px solid blue;
+}
+#root .app main .review-section .quote-image img {
+  width: 100%;
+  height: 100%;
+}
+#root .app main .review-section .review-element {
+  width: clamp(320px, 20vw, 400px);
+  box-shadow: 5px 5px 15px hsl(217, 28%, 15%);
+  background-color: hsl(217, 28%, 15%);
+  border-radius: 5px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+#root .app main .review-section .review-element .review-description {
+  width: 100%;
+}
+#root .app main .review-section .review-element .review-description p {
+  color: white;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+#root .app main .review-section .review-element .profile-data {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 7px;
+}
+#root .app main .review-section .review-element .profile-data .profile-image {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+#root .app main .review-section .review-element .profile-data .profile-image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+#root .app main .review-section .review-element .profile-data .profile-data-container {
+  width: 45%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+#root .app main .review-section .review-element .profile-data .profile-data-container h3 {
+  font-size: 0.8rem;
+  color: white;
+  font-weight: 500;
+}
+#root .app main .review-section .review-element .profile-data .profile-data-container p {
+  font-size: 0.5rem;
+  color: white;
+  opacity: 0.8;
+}
+#root .app footer {
+  margin-top: 10rem;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  background-color: hsl(216, 53%, 9%);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 1rem;
+}
+#root .app footer .access-card {
+  border-radius: 5px;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.575);
+  transform: translateY(-50%);
+  background-color: hsl(217, 28%, 15%);
+  padding: 2rem;
+  width: clamp(350px, 50vw, 800px);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+#root .app footer .access-card h1 {
+  color: white;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-align: center;
+}
+#root .app footer .access-card p {
+  color: white;
+  width: 100%;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: center;
+}
+#root .app footer .access-card .access-card-buttons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+#root .app footer .access-card .access-card-buttons input {
+  width: 100%;
+  border-radius: 50px;
+  padding: 0.9rem;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  padding-left: 1.5rem;
+}
+#root .app footer .access-card .access-card-buttons button {
+  width: 100%;
+  border-radius: 50px;
+  padding: 0.9rem;
+  border: none;
+  color: black;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  background: linear-gradient(to right, hsl(176, 68%, 64%), hsl(198, 60%, 50%));
+  color: white;
+  transition: all ease 0.2s;
+}
+#root .app footer .access-card .access-card-buttons button:active {
+  scale: 0.98;
+}
+#root .app footer .footer-contents-section {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+#root .app footer .footer-contents-section .footer-image {
+  width: 170px;
+  height: 50px;
+}
+#root .app footer .footer-contents-section .footer-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#root .app footer .footer-contents-section .footer-contents {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 4rem;
+}
+#root .app footer .footer-contents-section .footer-contents .footer-upper-content {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+#root .app footer .footer-contents-section .footer-contents .footer-upper-content .location {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1.3rem;
+}
+#root .app footer .footer-contents-section .footer-contents .footer-upper-content .location p {
+  color: white;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+#root .app footer .footer-contents-section .footer-contents .footer-upper-content .contact {
+  width: 100%;
+  max-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+#root .app footer .footer-contents-section .footer-contents .footer-upper-content .contact .phone,
+#root .app footer .footer-contents-section .footer-contents .footer-upper-content .contact .email {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 1rem;
+}
+#root .app footer .footer-contents-section .footer-contents .footer-upper-content .contact .phone p,
+#root .app footer .footer-contents-section .footer-contents .footer-upper-content .contact .email p {
+  color: white;
+  opacity: 0.9;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+}
+#root .app footer .footer-contents-section .footer-contents .links-container {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+#root .app footer .footer-contents-section .footer-contents .links-container .links1,
+#root .app footer .footer-contents-section .footer-contents .links-container .links2 {
+  width: 100%;
+  max-width: 120px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 1rem;
+}
+#root .app footer .footer-contents-section .footer-contents .links-container .links1 p,
+#root .app footer .footer-contents-section .footer-contents .links-container .links2 p {
+  color: white;
+}
+#root .app footer .footer-contents-section .footer-contents .icons-container {
+  width: 100%;
+  max-width: 370px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1rem;
+  font-size: 1.8rem;
+  color: white;
+}
+
+@media (min-width: 400px) and (max-width: 550px) {
+  #root .app main .background-image-effect {
+    top: 7%;
+  }
+}
+@media (min-width: 551px) and (max-width: 700px) {
+  #root .app main .background-image-effect {
+    top: 10%;
+  }
+}
+@media (min-width: 700px) and (max-width: 880px) {
+  #root .app main .background-image-effect {
+    top: 10%;
+  }
+  #root .app main .background-image-effect .background-image-container {
+    height: 30vh;
+  }
+}
+@media (min-width: 650px) and (max-width: 900px) {
+  #root .app footer .footer-contents-section .footer-contents .footer-upper-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    gap: 0px;
+  }
+  #root .app footer .footer-contents-section .footer-contents .links-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    gap: 0px;
+  }
+}
+@media (min-width: 900px) {
+  #root .app main .background-image-container {
+    top: 10%;
+    background-image: url("./assets/bg-curvy-desktop.svg");
+    background-size: contain;
+  }
+  #root .app main .features-elements {
+    margin: 10px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #root .app main .content-image2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0rem;
+  }
+  #root .app main .review-section .quote-image {
+    left: 16%;
+  }
+  #root .app footer .access-card .access-card-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+  #root .app footer .access-card .access-card-buttons input {
+    max-width: 450px;
+  }
+  #root .app footer .access-card .access-card-buttons button {
+    max-width: 180px;
+  }
+  #root .app footer .footer-contents-section .footer-contents {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 3rem;
+  }
+  #root .app footer .footer-contents-section .footer-contents .footer-upper-content {
+    min-width: 500px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  #root .app footer .footer-contents-section .footer-contents .links-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    gap: 0px;
+  }
+}/*# sourceMappingURL=index.css.map */
