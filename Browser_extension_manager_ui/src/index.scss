@@ -1,0 +1,237 @@
+@mixin display($align, $justify, $direction, $gap) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
+@font-face {
+  font-family: notoSans-variable;
+  src: url('./Fonts/NotoSans-VariableFont_wdth\,wght.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  width: 100%;
+  @include display(flex-start,center ,row ,0px );
+  background-color: black;
+
+  .grad1 {
+    background: linear-gradient(to bottom, #040918 0%, #091540 100%);
+    color: white;
+
+    button {
+      background-color: hsl(226, 11%, 37%);
+      color: white;
+      border: 1px solid hsla(0, 0%, 78%, 0.282);
+    }
+  }
+
+  .button-active-status {
+    background-color: red;
+  }
+
+  .grad2 {
+    background: linear-gradient(to bottom, #EBF2FC 0%, #EEF8F9 100%);
+    color: #040918;
+
+    button {
+      background-color: white;
+      color: #040918;
+      box-shadow: 0px 2px 3px hsla(225, 23%, 24%, 0.337);
+      border: 1px solid white;
+    }
+  }
+
+  .theme-background-color1 {
+    background-color:hsl(226, 25%, 17%);
+  }
+
+  .theme-background-color2 {
+    background-color: white;
+  }
+
+  .theme-button-background1 {
+    background-color: hsl(226, 11%, 37%);
+  }
+
+  .theme-button-background2 {
+    background-color: white;
+  }
+
+  .app {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    max-width: 1340px;
+    min-height: 100vh;
+    padding: 1rem;
+    @include display(center, space-around, column, 10px);
+    font-family: notoSans-variable;
+
+    button.red {
+      background-color: hsl(3, 71%, 56%);
+      color: #040918;
+    }
+
+    .theme-section {
+      width: 90%;
+      padding: 0.7rem;
+      @include display(center, space-between, row, 0px);
+      border-radius: 10px;
+      box-shadow: 0px 1px 3px hsla(225, 23%, 24%, 0.337);
+      margin-bottom: 30px;
+
+      .theme-left-section {
+        width: 50%;
+        @include display(center, flex-start, row, 5px);
+
+        .theme-logo {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          overflow: hidden;
+
+          img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        h1 {
+          font-size: clamp(10px, 4vw, 25px);
+          // color: white;
+          font-weight: 600;
+        }
+      }
+
+      .theme-right-section {
+        width: 40%;
+        @include display(center, flex-end, row, 0px);
+
+        button {
+          border: none;
+          padding: 0.4rem;
+          border-radius: 5px;
+          @include display(center, center, row, 0px);
+        }
+      }
+    }
+
+    .active-section {
+      width: 90%;
+      @include display(center, space-between, column, 10px);
+      padding: 0.2rem;
+
+      h1 {
+        font-size: clamp(25px, 6vw, 35px);
+        font-weight: 600;
+      }
+
+      .active-section-buttons {
+        width: 100%;
+        max-width: 350px;
+        @include display(center, center, row, 10px);
+
+        .btns {
+          padding: 0.5rem 1rem;
+          border-radius: 40px;
+        }
+      }
+    }
+
+    .extentions-container {
+      width: 95%;
+      @include display(flex-start, center, row, 10px);
+      flex-wrap: wrap;
+      padding: 0.5rem;
+
+      .extentions {
+        width: 100%;
+        min-width: 300px;
+        max-width: 350px;
+        height: 180px;
+        border-radius: 20px;
+        padding: 1.3rem;
+        border: 1px solid rgb(163, 163, 163);
+        @include display(center, space-between, column, 0px);
+        box-shadow: 0px 1px 5px hsla(225, 23%, 24%, 0.537);
+
+        .extention-upper-section {
+          width: 100%;
+          height: 70%;
+          @include display(flex-start, flex-start, row, 15px);
+
+          .extention-upper-section-content {
+            @include display(flex-start, center, column, 5px);
+
+            p {
+              opacity: 0.8;
+            }
+          }
+        }
+        .extention-lower-section{
+          width: 100%;
+          padding: 0.2rem;
+          @include display(center,space-between ,row ,0px );
+          .btns{
+          padding: 0.5rem 1rem;
+          border-radius: 40px;
+          background-color: transparent;
+          }
+          .extention-active-button{
+            width: 40px;
+            height: 23px;
+            background-color: #9c9e9e;;
+            border-radius: 50px;
+            padding: 2px;
+            position: relative;
+            .circle{
+              position: absolute;
+              top: 50%;
+              left: 3;
+              transform: translateY(-50%);
+              width: 20px;
+              height: 80%;
+              background-color: white;
+              border-radius: 50%;
+            }
+          }
+          .extention-active{
+            background-color: hsl(3, 71%, 56%);
+            .circle{
+              right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width:900px) {
+  #root {
+    .app {
+      .active-section {
+        @include display(center, space-between, row, 0px);
+
+        .active-section-buttons {
+          @include display(center, flex-end, row, 10px);
+        }
+      }
+    }
+  }
+}

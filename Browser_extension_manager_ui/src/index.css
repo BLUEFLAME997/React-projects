@@ -1,0 +1,256 @@
+@font-face {
+  font-family: notoSans-variable;
+  src: url("./Fonts/NotoSans-VariableFont_wdth,wght.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0px;
+  background-color: black;
+}
+#root .grad1 {
+  background: linear-gradient(to bottom, #040918 0%, #091540 100%);
+  color: white;
+}
+#root .grad1 button {
+  background-color: hsl(226, 11%, 37%);
+  color: white;
+  border: 1px solid hsla(0, 0%, 78%, 0.282);
+}
+#root .button-active-status {
+  background-color: red;
+}
+#root .grad2 {
+  background: linear-gradient(to bottom, #EBF2FC 0%, #EEF8F9 100%);
+  color: #040918;
+}
+#root .grad2 button {
+  background-color: white;
+  color: #040918;
+  box-shadow: 0px 2px 3px hsla(225, 23%, 24%, 0.337);
+  border: 1px solid white;
+}
+#root .theme-background-color1 {
+  background-color: hsl(226, 25%, 17%);
+}
+#root .theme-background-color2 {
+  background-color: white;
+}
+#root .theme-button-background1 {
+  background-color: hsl(226, 11%, 37%);
+}
+#root .theme-button-background2 {
+  background-color: white;
+}
+#root .app {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  max-width: 1340px;
+  min-height: 100vh;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  gap: 10px;
+  font-family: notoSans-variable;
+}
+#root .app button.red {
+  background-color: hsl(3, 71%, 56%);
+  color: #040918;
+}
+#root .app .theme-section {
+  width: 90%;
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 0px;
+  border-radius: 10px;
+  box-shadow: 0px 1px 3px hsla(225, 23%, 24%, 0.337);
+  margin-bottom: 30px;
+}
+#root .app .theme-section .theme-left-section {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 5px;
+}
+#root .app .theme-section .theme-left-section .theme-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+#root .app .theme-section .theme-left-section .theme-logo img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+#root .app .theme-section .theme-left-section h1 {
+  font-size: clamp(10px, 4vw, 25px);
+  font-weight: 600;
+}
+#root .app .theme-section .theme-right-section {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+  gap: 0px;
+}
+#root .app .theme-section .theme-right-section button {
+  border: none;
+  padding: 0.4rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0px;
+}
+#root .app .active-section {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0.2rem;
+}
+#root .app .active-section h1 {
+  font-size: clamp(25px, 6vw, 35px);
+  font-weight: 600;
+}
+#root .app .active-section .active-section-buttons {
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+}
+#root .app .active-section .active-section-buttons .btns {
+  padding: 0.5rem 1rem;
+  border-radius: 40px;
+}
+#root .app .extentions-container {
+  width: 95%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+}
+#root .app .extentions-container .extentions {
+  width: 100%;
+  min-width: 300px;
+  max-width: 350px;
+  height: 180px;
+  border-radius: 20px;
+  padding: 1.3rem;
+  border: 1px solid rgb(163, 163, 163);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 0px;
+  box-shadow: 0px 1px 5px hsla(225, 23%, 24%, 0.537);
+}
+#root .app .extentions-container .extentions .extention-upper-section {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 15px;
+}
+#root .app .extentions-container .extentions .extention-upper-section .extention-upper-section-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+#root .app .extentions-container .extentions .extention-upper-section .extention-upper-section-content p {
+  opacity: 0.8;
+}
+#root .app .extentions-container .extentions .extention-lower-section {
+  width: 100%;
+  padding: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 0px;
+}
+#root .app .extentions-container .extentions .extention-lower-section .btns {
+  padding: 0.5rem 1rem;
+  border-radius: 40px;
+  background-color: transparent;
+}
+#root .app .extentions-container .extentions .extention-lower-section .extention-active-button {
+  width: 40px;
+  height: 23px;
+  background-color: #9c9e9e;
+  border-radius: 50px;
+  padding: 2px;
+  position: relative;
+}
+#root .app .extentions-container .extentions .extention-lower-section .extention-active-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 3;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 80%;
+  background-color: white;
+  border-radius: 50%;
+}
+#root .app .extentions-container .extentions .extention-lower-section .extention-active {
+  background-color: hsl(3, 71%, 56%);
+}
+#root .app .extentions-container .extentions .extention-lower-section .extention-active .circle {
+  right: 0;
+}
+
+@media (min-width: 900px) {
+  #root .app .active-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 0px;
+  }
+  #root .app .active-section .active-section-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+    gap: 10px;
+  }
+}/*# sourceMappingURL=index.css.map */
