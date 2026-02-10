@@ -5,7 +5,10 @@ import { extentionData } from '../Context/Element_data';
 const Extentions = ({img,name,description,id}) => {
   const data=useContext(extentionData);
   let elemDataArrya=[...data.allElements];
-  const [action,setAction]=useState(false);
+  let event = data.allElements.filter((elem,idx)=>{
+    return elem.id===id;
+  })
+  const [action,setAction]=useState(event[0].active);
   const remove=(id)=>{
     elemDataArrya=[]
     let elemValues=data.allElements.filter((item)=>{

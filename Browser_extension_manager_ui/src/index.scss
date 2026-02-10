@@ -78,7 +78,7 @@ body {
     max-width: 1340px;
     min-height: 100vh;
     padding: 1rem;
-    @include display(center, space-around, column, 10px);
+    @include display(center, flex-start, column, 10px);
     font-family: notoSans-variable;
 
     button.red {
