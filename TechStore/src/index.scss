@@ -1,0 +1,96 @@
+@mixin display($align,$justify,$direction,$gap){
+  display: flex;
+  align-items: $align;
+  flex-direction: $direction;
+  justify-content: $justify;
+  gap: $gap;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+}
+
+#root{
+  width: 100%;
+  .app{
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    font-family: inter;
+    position: relative;
+
+    nav{
+      width: 100%;
+      // position: sticky;
+      padding: 1rem;
+      @include display(center,center ,column ,1rem );
+      .upper-content{
+        width: 100%;
+        @include display(center,space-between ,row ,0px );
+        .nav-logo{
+          width: 40%;
+          @include display(center,flex-start ,row ,5px );
+          color:  #2A56D6;
+          .logo{
+            font-size: 2rem;
+          }
+          h3{
+            font-size: 1rem;
+            font-weight: 400;
+          }
+        }
+        .nav-links{
+          width: 40%;
+          padding-right: 1rem;
+          @include display(center,flex-end ,row , 1.5rem);
+          .cart-link{
+            font-size: 1.5rem;
+            background-color: transparent;
+            border: none;
+            color: rgba(32, 32, 32, 0.878);
+          }
+          .nav-button{
+            font-size: 1.5rem;
+            background-color: transparent;
+            border: none;
+            color: rgba(32, 32, 32, 0.878);
+          }
+        }
+      }
+      .navigation-links{
+        width: 100%;
+        @include display(flex-start,flex-start ,column , 2px);
+        
+        a{
+          width: 100%;
+          padding: 1rem;
+          // background-color: #2A56D6;
+          text-decoration: none;
+          color: rgba(32, 32, 32, 0.878);
+          border-radius: 5px;
+        }
+        a:active{
+          background-color: #2A56D6;
+          color: white;
+        }
+      }
+      .navigation-close{
+      display: none;
+    }
+    .navigation-active{
+      display: flex;
+    }
+    }
+    footer{
+      bottom: 0;
+      position: absolute;
+      
+    }
+  }
+}
