@@ -118,13 +118,12 @@ body {
 
       .home-page {
         width: 100%;
-        @include display(center, flex-start, column, 0px);
+        @include display(center, flex-start, column, 3rem);
 
         .top-layer-section {
           width: 100%;
           @include display(center, flex-start, column, 2.5rem);
           padding: 5rem 1rem;
-          border: 2px solid blue;
           background: linear-gradient(to right bottom, #3766e8, #305ED8, #8E1BD6);
 
           .top-layer-section-content1 {
@@ -231,7 +230,33 @@ body {
             }
           }
         }
-        
+
+        .rating-section {
+          width: 100%;
+          @include display(center, center, column, 2rem);
+
+          .ratings {
+            width: 100%;
+            @include display(center, space-around, row, 1rem);
+
+            .rating-data {
+              width: 40%;
+
+              @include display(center, center, column, 5px);
+
+              h1 {
+                color: #305ED8;
+                font-size: 2.3rem;
+                font-weight: 300;
+              }
+
+              p {
+                color: #435065;
+                font-size: 0.9rem;
+              }
+            }
+          }
+        }
       }
     }
 
@@ -346,6 +371,20 @@ body {
         color: rgba(255, 255, 255, 0.686);
         font-weight: 200;
         font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@media (min-width:770px) {
+  #root {
+    .app {
+      main {
+        .home-page {
+          .rating-section {
+            @include display(center, center, row, 0px);
+          }
+        }
       }
     }
   }

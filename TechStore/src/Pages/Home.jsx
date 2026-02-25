@@ -1,7 +1,10 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import RatingCompo from '../Components/RatingCompo';
 
 const Home = () => {
+  const ratingData1=[{top:"10K+",bottom:"Happy Customers"},{top:"500+",bottom:"Products"}];
+  const ratingData2=[{top:"50+",bottom:"Brands"},{top:"4.9★",bottom:"Rating"}];
   return (
     <div className='home-page'>
       <section className='top-layer-section'>
@@ -25,10 +28,8 @@ const Home = () => {
         </div>
       </section>
       <section className="rating-section">
-        <div className="rating-section1">
-          
-        </div>
-        <div className="rating-section2"></div>
+        <RatingCompo arr={ratingData1}/>
+        <RatingCompo arr={ratingData2}/>
       </section>
     </div>
   )

@@ -117,7 +117,7 @@ body {
   align-items: center;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 0px;
+  gap: 3rem;
 }
 #root .app main .home-page .top-layer-section {
   width: 100%;
@@ -127,7 +127,6 @@ body {
   justify-content: flex-start;
   gap: 2.5rem;
   padding: 5rem 1rem;
-  border: 2px solid blue;
   background: linear-gradient(to right bottom, #3766e8, #305ED8, #8E1BD6);
 }
 #root .app main .home-page .top-layer-section .top-layer-section-content1 {
@@ -230,6 +229,39 @@ body {
   color: #3766e8;
   font-size: 1.7rem;
   font-weight: 400;
+}
+#root .app main .home-page .rating-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+#root .app main .home-page .rating-section .ratings {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 1rem;
+}
+#root .app main .home-page .rating-section .ratings .rating-data {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+#root .app main .home-page .rating-section .ratings .rating-data h1 {
+  color: #305ED8;
+  font-size: 2.3rem;
+  font-weight: 300;
+}
+#root .app main .home-page .rating-section .ratings .rating-data p {
+  color: #435065;
+  font-size: 0.9rem;
 }
 #root .app footer {
   width: 100%;
@@ -371,6 +403,15 @@ body {
   font-size: 0.9rem;
 }
 
+@media (min-width: 770px) {
+  #root .app main .home-page .rating-section {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0px;
+  }
+}
 @media (min-width: 900px) {
   #root .app main .home-page .top-layer-section {
     display: flex;
