@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useContext } from 'react';
 import { productDataContext } from '../Context/ProductData';
 import TechStoreLogo from './TechStoreLogo';
+import {NavLink} from 'react-router-dom'
 
 const NavBar = () => {
   const data = useContext(productDataContext)
@@ -23,9 +24,33 @@ const NavBar = () => {
         </div>
       </div>
       <div className={`navigation-links ${data.isOpen?"navigation-close":"navigation-active"}`}>
-        <a href="">Home</a>
-        <a href="">Products</a>
-        <a href="">About</a>
+        <NavLink to="/" 
+        style={({isActive})=>({
+          backgroundColor:isActive?"blue":"white",
+          color:isActive?"white":"black"
+        })}
+        onClick={()=>{
+          data.setIsOpen(!data.isOpen);
+        }}
+        >Home</NavLink>
+        <NavLink to="/about"
+        style={({isActive})=>({
+          backgroundColor:isActive?"blue":"white",
+          color:isActive?"white":"black"
+        })}
+        onClick={()=>{
+          data.setIsOpen(!data.isOpen);
+        }}
+        >About</NavLink>
+        <NavLink to="/product"
+        style={({isActive})=>({
+          backgroundColor:isActive?"blue":"white",
+          color:isActive?"white":"black"
+        })}
+        onClick={()=>{
+          data.setIsOpen(!data.isOpen);
+        }}
+        >Product</NavLink>
       </div>
     </nav>
   )
