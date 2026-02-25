@@ -7,7 +7,6 @@
 html,
 body {
   width: 100%;
-  height: 100%;
 }
 
 #root {
@@ -15,7 +14,6 @@ body {
 }
 #root .app {
   width: 100%;
-  height: 100%;
   min-height: 100vh;
   font-family: inter;
   position: relative;
@@ -23,6 +21,7 @@ body {
 #root .app nav {
   width: 100%;
   position: sticky;
+  z-index: 1;
   top: 0;
   background-color: white;
   padding: 1rem;
@@ -105,10 +104,135 @@ body {
   opacity: 1;
 }
 #root .app main {
-  background-color: blue;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+#root .app main .home-page {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0px;
+}
+#root .app main .home-page .top-layer-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2.5rem;
+  padding: 5rem 1rem;
+  border: 2px solid blue;
+  background: linear-gradient(to right bottom, #3766e8, #305ED8, #8E1BD6);
+}
+#root .app main .home-page .top-layer-section .top-layer-section-content1 {
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+#root .app main .home-page .top-layer-section .top-layer-section-content1 .new-arrivals {
+  width: 220px;
+  color: white;
+  padding: 0.5rem 0px;
+  border-radius: 50px;
+  background-color: rgba(231, 231, 231, 0.311);
+  backdrop-filter: blur(30px);
+  font-weight: 300;
+  font-size: 0.9rem;
+  text-align: center;
+}
+#root .app main .home-page .top-layer-section .top-layer-section-content1 h1 {
+  font-size: clamp(3rem, 7vw, 4rem);
+  font-weight: 400;
+  line-height: 0.95;
   color: white;
 }
+#root .app main .home-page .top-layer-section .top-layer-section-content1 h1 span {
+  color: transparent;
+  background: linear-gradient(to right, rgb(226, 255, 39), rgb(250, 167, 1), rgb(255, 179, 0));
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+#root .app main .home-page .top-layer-section .top-layer-section-content1 p {
+  color: white;
+  line-height: 2;
+  font-size: 1.2rem;
+}
+#root .app main .home-page .top-layer-section .top-layer-section-content1 .section-content1-buttons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 5px;
+}
+#root .app main .home-page .top-layer-section .top-layer-section-content1 .section-content1-buttons #btn1 {
+  border-radius: 10px;
+  background-color: white;
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  word-spacing: 2px;
+  transition: all ease 0.2s;
+}
+#root .app main .home-page .top-layer-section .top-layer-section-content1 .section-content1-buttons #btn2 {
+  border-radius: 10px;
+  color: white;
+  padding: 1rem 1.3rem;
+  background-color: rgba(255, 255, 255, 0.084);
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.689);
+  transition: all ease 0.1s;
+  text-decoration: none;
+}
+#root .app main .home-page .top-layer-section .top-layer-section-content1 .section-content1-buttons a:active {
+  transform: scale(0.9);
+}
+#root .app main .home-page .top-layer-section .top-layer-section-content2 {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0px;
+  position: relative;
+  border-radius: 10px;
+}
+#root .app main .home-page .top-layer-section .top-layer-section-content2 img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+#root .app main .home-page .top-layer-section .top-layer-section-content2 .section-content2-price {
+  position: absolute;
+  background-color: white;
+  bottom: 0px;
+  left: 0;
+  padding: 1.2rem;
+  border-radius: 10px;
+  transform: translate(-10%, 50%);
+}
+#root .app main .home-page .top-layer-section .top-layer-section-content2 .section-content2-price p {
+  color: rgba(0, 0, 0, 0.853);
+  font-weight: 300;
+  font-size: 0.8rem;
+}
+#root .app main .home-page .top-layer-section .top-layer-section-content2 .section-content2-price h2 {
+  color: #3766e8;
+  font-size: 1.7rem;
+  font-weight: 400;
+}
 #root .app footer {
+  width: 100%;
   padding: 2.5rem 1rem;
   background-color: #151E2E;
   display: flex;
@@ -248,10 +372,15 @@ body {
 }
 
 @media (min-width: 900px) {
+  #root .app main .home-page .top-layer-section {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2.5rem;
+  }
   #root .app footer {
-    position: fixed;
     width: 100%;
-    bottom: 0;
   }
   #root .app footer .footer-upper-content {
     display: flex;

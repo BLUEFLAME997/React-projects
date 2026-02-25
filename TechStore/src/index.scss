@@ -15,7 +15,6 @@
 html,
 body {
   width: 100%;
-  height: 100%;
 }
 
 #root {
@@ -23,14 +22,16 @@ body {
 
   .app {
     width: 100%;
-    height: 100%;
+    // height: 100%;
     min-height: 100vh;
     font-family: inter;
     position: relative;
 
     nav {
       width: 100%;
+      // max-height: 60px;
       position: sticky;
+      z-index: 1;
       top: 0;
       background-color: white;
       // position: sticky;
@@ -105,14 +106,137 @@ body {
         opacity: 1;
         // transition: all ease 0.2s;
       }
+
+      // .navigation-close{
+
+      // }
     }
 
     main {
-      background-color: blue;
-      color: white;
+      width: 100%;
+      @include display(center, flex-start, column, 1rem);
+
+      .home-page {
+        width: 100%;
+        @include display(center, flex-start, column, 0px);
+
+        .top-layer-section {
+          width: 100%;
+          @include display(center, flex-start, column, 2.5rem);
+          padding: 5rem 1rem;
+          border: 2px solid blue;
+          background: linear-gradient(to right bottom, #3766e8, #305ED8, #8E1BD6);
+
+          .top-layer-section-content1 {
+            max-width: 600px;
+            width: 100%;
+            @include display(flex-start, flex-start, column, 1.5rem);
+
+            .new-arrivals {
+              width: 220px;
+              color: white;
+              padding: 0.5rem 0px;
+              // border: 2px solid red;
+              border-radius: 50px;
+              background-color: rgba(231, 231, 231, 0.311);
+              backdrop-filter: blur(30px);
+              font-weight: 300;
+              font-size: 0.9rem;
+              text-align: center;
+            }
+
+            h1 {
+              // font-size: clamp();
+              font-size: clamp(3rem, 7vw, 4rem);
+              font-weight: 400;
+              line-height: 0.95;
+              color: white;
+
+              span {
+                color: transparent;
+                background: linear-gradient(to right, rgb(226, 255, 39), rgb(250, 167, 1), rgb(255, 179, 0));
+                background-clip: text;
+              }
+            }
+
+            p {
+              color: white;
+              line-height: 2;
+              font-size: 1.2rem;
+            }
+
+            .section-content1-buttons {
+              width: 100%;
+              @include display(center, flex-start, row, 5px);
+
+              #btn1 {
+                border-radius: 10px;
+                background-color: white;
+                padding: 1rem 1.5rem;
+                text-decoration: none;
+                word-spacing: 2px;
+                transition: all ease 0.2s;
+              }
+
+              #btn2 {
+                border-radius: 10px;
+                color: white;
+                padding: 1rem 1.3rem;
+                background-color: rgba(255, 255, 255, 0.084);
+                backdrop-filter: blur(30px);
+                border: 1px solid rgba(255, 255, 255, 0.689);
+                transition: all ease 0.1s;
+                text-decoration: none;
+              }
+
+              a:active {
+                transform: scale(0.9);
+              }
+            }
+          }
+
+          .top-layer-section-content2 {
+            width: 100%;
+            max-width: 500px;
+            @include display(center, center, row, 0px);
+            position: relative;
+            border-radius: 10px;
+
+            img {
+              width: 100%;
+              height: 100%;
+              border-radius: 10px;
+            }
+
+            .section-content2-price {
+              position: absolute;
+              background-color: white;
+              bottom: 0px;
+              left: 0;
+              padding: 1.2rem;
+              border-radius: 10px;
+              transform: translate(-10%, 50%);
+
+              p {
+                color: rgba(0, 0, 0, 0.853);
+                font-weight: 300;
+                font-size: 0.8rem;
+              }
+
+              h2 {
+                color: #3766e8;
+                font-size: 1.7rem;
+                font-weight: 400;
+              }
+            }
+          }
+        }
+        
+      }
     }
 
-    footer{
+    footer {
+      width: 100%;
       padding: 2.5rem 1rem;
       background-color: #151E2E;
       @include display(center, flex-start, column, 2rem);
@@ -188,32 +312,37 @@ body {
             }
           }
         }
-        .page-contact{
+
+        .page-contact {
           width: 100%;
-          @include display(flex-start,flex-start ,column ,15px );
-          h1{
+          @include display(flex-start, flex-start, column, 15px);
+
+          h1 {
             font-size: 1.2rem;
             color: white;
             font-weight: 300;
           }
-          .page-contact-content{
+
+          .page-contact-content {
             width: 100%;
-            @include display(flex-start,flex-start ,column , 8px);
+            @include display(flex-start, flex-start, column, 8px);
             color: rgba(255, 255, 255, 0.686);
             font-weight: 200;
             font-size: 0.9rem;
           }
         }
       }
-      hr{
+
+      hr {
         color: white;
         width: 100%;
         height: 1px;
         background-color: white;
       }
-      .footer-lower-content{
+
+      .footer-lower-content {
         width: 100%;
-        @include display(center,center ,row ,0px );
+        @include display(center, center, row, 0px);
         color: rgba(255, 255, 255, 0.686);
         font-weight: 200;
         font-size: 0.9rem;
@@ -222,23 +351,33 @@ body {
   }
 }
 
-@media (min-width:900px){
-  #root{
-    .app{
-      footer{
-      position: fixed;
-      width: 100%;
-      bottom: 0;
-        .footer-upper-content{
-          @include display(flex-start,flex-start ,row , 10px );
+@media (min-width:900px) {
+  #root {
+    .app {
+      main {
+        .home-page {
+          .top-layer-section {
+            @include display(center, center, row, 2.5rem);
+          }
+        }
+      }
+
+      footer {
+        width: 100%;
+
+        .footer-upper-content {
+          @include display(flex-start, flex-start, row, 10px);
           width: 100%;
-          .footer-logo{
+
+          .footer-logo {
             width: 50%;
           }
-          .page-links{
+
+          .page-links {
             width: 25%;
           }
-          .page-contact{
+
+          .page-contact {
             width: 25%;
           }
         }
