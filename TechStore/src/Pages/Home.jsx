@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import RatingCompo from '../Components/RatingCompo';
+import { useContext } from 'react';
+import { productDataContext } from '../Context/ProductData';
+import CartButton from '../Components/CartButton';
+import ProductCard from '../Components/ProductCard';
 
 const Home = () => {
+  const data = useContext(productDataContext);
+  const elem=data.products.filter((elem)=>{
+    if(elem.topSale===true) return elem;
+  })
+  const [topSales,setTopSales]=useState([...elem]);
+  
   const ratingData1=[{top:"10K+",bottom:"Happy Customers"},{top:"500+",bottom:"Products"}];
   const ratingData2=[{top:"50+",bottom:"Brands"},{top:"4.9★",bottom:"Rating"}];
   return (
@@ -30,6 +40,17 @@ const Home = () => {
       <section className="rating-section">
         <RatingCompo arr={ratingData1}/>
         <RatingCompo arr={ratingData2}/>
+      </section>
+      <section className="top-sales">
+        <div className="top-sales-heading">
+          <h1><i class="ri-star-fill"></i>Top Sales</h1>
+          <p>Our most popular products loved by thousands of customers</p>
+        </div>
+        <div className="top-sales-card-items">
+          {topSales.map((elem,idx)=>{
+            return <ProductCard key={idx} element={elem}/>
+          })}
+        </div>
       </section>
     </div>
   )

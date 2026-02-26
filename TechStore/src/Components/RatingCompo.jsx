@@ -4,8 +4,8 @@ import RatingData from './RatingData'
 const RatingCompo = ({arr}) => {
   return (
     <div className='ratings'>
-      {arr.map(element => {
-        return <RatingData element={element}/>
+      {arr.map((element,idx) => {
+        return <RatingData key={idx} element={element}/>
       })}
     </div>
   )

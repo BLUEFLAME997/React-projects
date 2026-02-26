@@ -113,6 +113,8 @@ body {
 }
 #root .app main .home-page {
   width: 100%;
+  position: relative;
+  z-index: 3;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -262,6 +264,137 @@ body {
 #root .app main .home-page .rating-section .ratings .rating-data p {
   color: #435065;
   font-size: 0.9rem;
+}
+#root .app main .home-page .top-sales {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+#root .app main .home-page .top-sales .top-sales-heading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+#root .app main .home-page .top-sales .top-sales-heading h1 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+#root .app main .home-page .top-sales .top-sales-heading h1 i {
+  color: rgb(255, 153, 0);
+}
+#root .app main .home-page .top-sales .top-sales-heading p {
+  max-width: 80%;
+  text-align: center;
+  line-height: 1.5;
+  color: rgba(30, 36, 45, 0.8117647059);
+}
+#root .app main .home-page .top-sales .top-sales-card-items {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+#root .app main .home-page .top-sales .top-sales-card-items .product-card {
+  overflow: hidden;
+  min-width: 350px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 350px;
+  min-height: 590px;
+  max-height: 600px;
+  position: relative;
+  box-shadow: 0px 2px 5px rgba(33, 33, 33, 0.416);
+  transition: transform 0.2s ease 0.2s, box-shadow 0.2s ease;
+}
+#root .app main .home-page .top-sales .top-sales-card-items .product-card h3 {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  color: white;
+  background: linear-gradient(to right, rgb(255, 153, 0), rgb(255, 196, 0), rgb(255, 132, 0));
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding: 0.2rem 0.3rem;
+  transform: translate(18%, 50%);
+}
+#root .app main .home-page .top-sales .top-sales-card-items .product-card .product-image {
+  width: 100%;
+  height: 55%;
+}
+#root .app main .home-page .top-sales .top-sales-card-items .product-card .product-image img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 100%;
+  max-height: 350px;
+  transition: all linear 0.2s;
+}
+#root .app main .home-page .top-sales .top-sales-card-items .product-card .product-detail {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+}
+#root .app main .home-page .top-sales .top-sales-card-items .product-card .product-detail .product-category {
+  color: #305ED8;
+  font-weight: 400;
+}
+#root .app main .home-page .top-sales .top-sales-card-items .product-card .product-detail .product-name {
+  text-transform: capitalize;
+}
+#root .app main .home-page .top-sales .top-sales-card-items .product-card .product-detail .product-description {
+  color: rgba(30, 36, 45, 0.8117647059);
+}
+#root .app main .home-page .top-sales .top-sales-card-items .product-card .product-detail .product-price-cart {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0px;
+}
+#root .app main .home-page .top-sales .top-sales-card-items .product-card .product-detail .product-price-cart h2 {
+  color: #2A56D6;
+  font-weight: 400;
+}
+#root .app main .home-page .top-sales .top-sales-card-items .product-card .product-detail .product-price-cart .cart-button {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5px;
+  font-size: 1.2rem;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(to right, #305ED8, #144BEA);
+}
+#root .app main .home-page .top-sales .top-sales-card-items .product-card .product-detail .product-price-cart .cart-button h4 {
+  font-weight: 300;
+  font-size: 1rem;
+}
+#root .app main .home-page .top-sales .top-sales-card-items .product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 20px 30px rgba(72, 72, 72, 0.582);
+}
+#root .app main .home-page .top-sales .top-sales-card-items .product-card:hover .product-image img {
+  scale: 1.05;
 }
 #root .app footer {
   width: 100%;
