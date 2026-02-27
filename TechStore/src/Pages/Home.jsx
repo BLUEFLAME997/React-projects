@@ -5,16 +5,25 @@ import { useContext } from 'react';
 import { productDataContext } from '../Context/ProductData';
 import CartButton from '../Components/CartButton';
 import ProductCard from '../Components/ProductCard';
+import { useNavigate } from 'react-router-dom';
+import FeaturesCardsSection from '../Components/FeaturesCardsSection';
+import ReviewCardSection from '../Components/ReviewCardSection';
+import Subscirbe from '../Components/Subscirbe';
 
 const Home = () => {
+  const navigate=useNavigate();
   const data = useContext(productDataContext);
-  const elem=data.products.filter((elem)=>{
+  const elem=data.products.filter((elem)=>{ 
     if(elem.topSale===true) return elem;
   })
   const [topSales,setTopSales]=useState([...elem]);
   
   const ratingData1=[{top:"10K+",bottom:"Happy Customers"},{top:"500+",bottom:"Products"}];
   const ratingData2=[{top:"50+",bottom:"Brands"},{top:"4.9★",bottom:"Rating"}];
+
+  const productPageNavigate=()=>{
+    navigate('/product');
+  }
   return (
     <div className='home-page'>
       <section className='top-layer-section'>
@@ -52,6 +61,27 @@ const Home = () => {
           })}
         </div>
       </section>
+      <button className="all-products-button"
+      onClick={()=>{
+        productPageNavigate();
+      }}>
+        view All products
+      </button>
+      <section className="features-section">
+        <div className="features-heading">
+          <h1>Why Choose TechStore?</h1>
+          <p>We provide the best shopping experience</p>
+        </div>
+        <FeaturesCardsSection/>
+      </section>
+      <section className="review-section">
+        <div className="review-heading">
+          <h1>What Our Customers Say</h1>
+          <p>Trusted by thousands of satisfied customers</p>
+        </div>
+        <ReviewCardSection/>
+      </section>
+      <Subscirbe/>
     </div>
   )
 }

@@ -96,7 +96,6 @@ const ProductData = ({ children }) => {
       image: "https://i.pinimg.com/1200x/37/a5/d9/37a5d9176469c76a0ab1453235488c55.jpg"
     }
   ];
-
   const [isOpen, setIsOpen] = useState(true);
   return (
     <productDataContext.Provider value={{ isOpen, setIsOpen, products }}>

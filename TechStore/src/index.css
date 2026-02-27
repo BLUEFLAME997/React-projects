@@ -11,17 +11,24 @@ body {
 
 #root {
   width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0px;
+  background-color: black;
 }
 #root .app {
   width: 100%;
   min-height: 100vh;
   font-family: inter;
   position: relative;
+  max-width: 1440px;
 }
 #root .app nav {
   width: 100%;
   position: sticky;
-  z-index: 1;
+  z-index: 3;
   top: 0;
   background-color: white;
   padding: 1rem;
@@ -114,7 +121,9 @@ body {
 #root .app main .home-page {
   width: 100%;
   position: relative;
+  background-color: white;
   z-index: 3;
+  padding-bottom: 3rem;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -391,10 +400,218 @@ body {
 }
 #root .app main .home-page .top-sales .top-sales-card-items .product-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0px 20px 30px rgba(72, 72, 72, 0.582);
+  box-shadow: 0px 10px 15px -5px rgba(72, 72, 72, 0.582);
 }
 #root .app main .home-page .top-sales .top-sales-card-items .product-card:hover .product-image img {
   scale: 1.05;
+}
+#root .app main .home-page .all-products-button {
+  padding: 1rem 2rem;
+  text-transform: capitalize;
+  border-radius: 15px;
+  font-size: 1rem;
+  color: white;
+  background-color: #144BEA;
+  border: none;
+  transition: all ease 0.2s;
+}
+#root .app main .home-page .all-products-button:active {
+  scale: 0.95;
+}
+#root .app main .home-page .features-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+#root .app main .home-page .features-section .features-heading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.8rem;
+}
+#root .app main .home-page .features-section .features-heading h1 {
+  text-align: center;
+  font-weight: 500;
+}
+#root .app main .home-page .features-section .features-heading p {
+  text-align: center;
+  color: rgba(36, 44, 59, 0.7568627451);
+  font-size: 0.92rem;
+}
+#root .app main .home-page .features-section .feature-cards-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem 0.2rem;
+}
+#root .app main .home-page .features-section .feature-cards-section .feature-card {
+  max-width: 330px;
+  min-width: 320px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem 0rem;
+  border-radius: 10px;
+  transition: transform ease-in-out 0.2s 0.2s;
+}
+#root .app main .home-page .features-section .feature-cards-section .feature-card .card-icon {
+  padding: 0.8rem;
+  background-color: #144BEA;
+  border-radius: 20px;
+}
+#root .app main .home-page .features-section .feature-cards-section .feature-card .card-icon i {
+  color: white;
+  font-size: 2.2rem;
+}
+#root .app main .home-page .features-section .feature-cards-section .feature-card h3 {
+  text-transform: capitalize;
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+#root .app main .home-page .features-section .feature-cards-section .feature-card p {
+  color: rgba(44, 53, 68, 0.7803921569);
+  font-size: 0.9rem;
+}
+#root .app main .home-page .features-section .feature-cards-section .feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 10px -5px rgba(68, 68, 68, 0.311);
+}
+#root .app main .home-page .review-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+#root .app main .home-page .review-section .review-heading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.7rem;
+}
+#root .app main .home-page .review-section .review-heading h1 {
+  max-width: 80%;
+  font-size: 1.9rem;
+  font-weight: 500;
+  text-align: center;
+}
+#root .app main .home-page .review-section .review-heading p {
+  color: rgba(37, 45, 57, 0.8274509804);
+  font-size: 0.9rem;
+}
+#root .app main .home-page .review-section .review-card-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 1rem 0.8rem;
+}
+#root .app main .home-page .review-section .review-card-section .review-card {
+  width: 100%;
+  max-width: 380px;
+  min-width: 280px;
+  padding: 1.5rem 1rem;
+  border-radius: 15px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: 0px 10px 10px -5px rgba(51, 51, 51, 0.312);
+  transition: all ease-in-out 0.15s;
+}
+#root .app main .home-page .review-section .review-card-section .review-card .review-icon i {
+  color: transparent;
+  background-color: rgb(247, 194, 5);
+  -webkit-background-clip: text;
+          background-clip: text;
+  font-size: 1.3rem;
+}
+#root .app main .home-page .review-section .review-card-section .review-card h1 {
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.6;
+  font-style: italic;
+  color: rgba(21, 30, 46, 0.7960784314);
+}
+#root .app main .home-page .review-section .review-card-section .review-card .review-name {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+}
+#root .app main .home-page .review-section .review-card-section .review-card .review-name #p2 {
+  color: rgba(21, 30, 46, 0.7960784314);
+  font-size: 0.9rem;
+}
+#root .app main .home-page .review-section .review-card-section .review-card:hover {
+  box-shadow: 0px 30px 90px -20px rgba(48, 48, 48, 0.575);
+}
+#root .app main .home-page .subscribeSection {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 4rem 0.5rem;
+  background: linear-gradient(to right, #285ef4, rgba(91, 21, 255, 0.8784313725), #8E1BD6);
+  color: white;
+}
+#root .app main .home-page .subscribeSection h1 {
+  font-size: clamp(2.5rem, 4vw, 3rem);
+  font-weight: 400;
+}
+#root .app main .home-page .subscribeSection p {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.79);
+}
+#root .app main .home-page .subscribeSection .subscribe-button-section {
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.8rem;
+}
+#root .app main .home-page .subscribeSection .subscribe-button-section input {
+  width: 100%;
+  padding: 1.1rem;
+  background-color: transparent;
+  border: none;
+  color: white;
+  outline-color: white;
+  font-size: 1.2rem;
+  border-radius: 15px;
+}
+#root .app main .home-page .subscribeSection .subscribe-button-section button {
+  width: 100%;
+  padding: 1.1rem;
+  background-color: white;
+  color: #144BEA;
+  border: none;
+  font-size: 1.1rem;
+  border-radius: 15px;
 }
 #root .app footer {
   width: 100%;
@@ -536,6 +753,22 @@ body {
   font-size: 0.9rem;
 }
 
+@media (min-width: 630px) {
+  #root .app main .home-page .subscribeSection .subscribe-button-section {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+  #root .app main .home-page .subscribeSection .subscribe-button-section input {
+    max-width: 350px;
+    width: 80%;
+  }
+  #root .app main .home-page .subscribeSection .subscribe-button-section button {
+    max-width: 150px;
+  }
+}
 @media (min-width: 770px) {
   #root .app main .home-page .rating-section {
     display: flex;
