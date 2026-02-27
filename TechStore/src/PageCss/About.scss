@@ -1,0 +1,95 @@
+@use '../Styles/mixin' as *;
+
+:root{
+  --primary:#1e242dcf;
+}
+
+.about-page {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 0rem;
+  @include display(center,flex-start,column,6.5rem);
+
+  .about-top-section {
+    padding: 4.5rem 1rem;
+    width: 100%;
+    @include display(center, center, column, 1.5rem);
+    background: linear-gradient(to right, #3766e8, #6730ff, #8E1BD6);
+    h1{
+      color: white;
+      font-size: 3rem;
+      font-weight: 400;
+    }
+    p{
+      color: white;
+      font-size: 1.2rem;
+    }
+  }
+  .about-mission{
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 780px;
+    @include display(flex-start,space-between,column,1.2rem);
+    box-shadow: 0px 10px 20px -5px rgba(60, 60, 60, 0.518);
+
+    .change{
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+  }
+  .site-values{
+    width: 100%;
+    @include display(center,center,column,2rem);
+    .site-values-heading{
+      width: 100%;
+      @include display(center,center,column,0.8rem);
+      h1{
+        font-size: 2.2rem;
+        font-weight: 500;
+        text-transform: capitalize;
+      }
+      p{
+        font-size: 0.95rem;
+        color: var(--primary);
+      }
+    }
+    .site-card-holder{
+      width: 100%;
+      padding: 0.5rem;
+      @include display(center,center,row,1rem);
+      flex-wrap: wrap;
+      .site-card{
+        padding: 2rem 1.5rem;
+        width: 100%;
+        min-width: 330px;
+        max-width: 360px;
+        @include display(center,center,column,1rem);
+        border-radius: 15px;
+        box-shadow: 0px 10px 10px -5px rgba(71, 71, 71, 0.559);
+        transition: transform ease-in-out 0.2s 0.3s;
+        .site-card-icon{
+          width: 65px;
+          border-radius: 17px;
+          padding: 0.7rem 0.4rem;
+          font-size: 2.2rem;
+          @include display(center,center,row,0px);
+          background: linear-gradient(to right bottom, #3766e8, #571ef7, #8E1BD6);
+          color: white;
+        }
+        h4{
+          font-weight: 500;
+        }
+        p{
+          font-size: 0.9rem;
+          text-align: center;
+          color: var(--primary);
+        }
+      }
+      .site-card:hover{
+        transform: translateY(-10px);
+        box-shadow: 0px 25px 60px -20px rgba(71, 71, 71, 0.559);
+      }
+    }
+  }
+}
