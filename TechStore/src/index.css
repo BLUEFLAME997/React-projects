@@ -16,7 +16,7 @@ body {
   flex-direction: row;
   justify-content: center;
   gap: 0px;
-  background-color: black;
+  background-color: white;
 }
 #root .app {
   width: 100%;
@@ -28,7 +28,7 @@ body {
 #root .app nav {
   width: 100%;
   position: sticky;
-  z-index: 3;
+  z-index: 6;
   top: 0;
   background-color: white;
   padding: 1rem;

@@ -1,0 +1,199 @@
+@use '../Styles/mixin' as *;
+
+:root {
+  --primary: #1e242dcf;
+  --secondary: rgba(71, 71, 71, 0.559);
+}
+
+.product-page {
+  position: relative;
+  width: 100%;
+  z-index: 4;
+  @include display(center, center, column, 2rem);
+  padding: 1rem;
+
+  .product-inner-page {
+    width: 100%;
+    padding: 1rem;
+    max-width: 1200px;
+    @include display(flex-start, center, column, 2rem);
+
+    .product-top-section {
+      width: 100%;
+      @include display(flex-start, flex-start, column, 1rem);
+
+      h1 {
+        font-weight: 400;
+        text-transform: capitalize;
+      }
+
+      p {
+        font-size: 1rem;
+        color: var(--primary);
+        line-height: 1.5;
+      }
+    }
+
+    .search-section {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      max-width: 500px;
+      @include display(center, flex-start, row, 10px);
+      border-radius: 15px;
+      border: 2px solid rgba(88, 88, 88, 0.293);
+
+      i {
+        color: var(--primary);
+        font-size: 1.5rem;
+      }
+
+      input {
+        font-size: 1.2rem;
+        width: 90%;
+        border: none;
+        outline: none;
+      }
+    }
+
+    .search-section:focus-within {
+      border: 2px solid rgb(76, 0, 255);
+    }
+
+    .product-search-buttons {
+      width: 100%;
+      @include display(center, flex-start, row, 1rem);
+      flex-wrap: wrap;
+
+      button {
+        font-size: 1.1rem;
+        font-weight: 100;
+        padding: 0.5rem 1rem;
+        border-radius: 40px;
+        border: none;
+        box-shadow: 0px 2px 10px -5px var(--primary);
+      }
+    }
+
+    .product-items-section {
+      width: 100%;
+      @include display(flex-start, center, column, 1rem);
+
+      .topP {
+        color: var(--primary);
+      }
+
+      .product-card-section {
+        width: 100%;
+        @include display(center, flex-start, row, 1.5rem);
+        flex-wrap: wrap;
+
+        .product-card {
+          overflow: hidden;
+          min-width: 350px;
+          border-radius: 15px;
+          width: 100%;
+          max-width: 350px;
+          min-height: 550px;
+          height: 550px;
+          max-height: 550px;
+          position: relative;
+          box-shadow: 0px 2px 5px rgba(33, 33, 33, 0.416);
+          transition: transform 0.2s ease 0.2s,
+            box-shadow 0.2s ease;
+
+          h3 {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            color: white;
+            background: linear-gradient(to right, rgb(255, 153, 0), rgb(255, 196, 0), rgb(255, 132, 0));
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 400;
+            padding: 0.2rem 0.3rem;
+            transform: translate(18%, 50%);
+          }
+
+          .h3-hide {
+            opacity: 0;
+          }
+
+          .h3-open {
+            opacity: 1;
+          }
+
+          .product-image {
+            width: 100%;
+            height: 60%;
+
+
+            img {
+              width: 100%;
+              object-fit: contain;
+              height: 100%;
+              max-height: 350px;
+              transition: all linear 0.2s;
+            }
+          }
+
+          .product-detail {
+            width: 100%;
+            height: 40%;
+            padding: 1rem;
+            @include display(flex-start, space-between, column, 15px);
+
+            .product-category {
+              color: #305ED8;
+              font-weight: 400;
+            }
+
+            .product-name {
+              text-transform: capitalize;
+            }
+
+            .product-description {
+              color: #1e242dcf;
+            }
+
+            .product-price-cart {
+              width: 100%;
+              @include display(center, space-between, row, 0px);
+
+              h2 {
+                color: #2A56D6;
+                font-weight: 400;
+              }
+
+              .cart-button {
+                @include display(center, center, row, 5px);
+                font-size: 1.2rem;
+                color: white;
+                padding: 0.5rem 1rem;
+                border-radius: 10px;
+                border: none;
+                background: linear-gradient(to right, #305ED8, #144BEA);
+
+                h4 {
+                  font-weight: 300;
+                  font-size: 1rem;
+                }
+              }
+            }
+          }
+        }
+
+        .product-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0px 10px 15px -5px rgba(72, 72, 72, 0.582);
+
+          .product-image {
+            img {
+              scale: 1.05;
+            }
+          }
+        }
+      }
+    }
+  }
+}
