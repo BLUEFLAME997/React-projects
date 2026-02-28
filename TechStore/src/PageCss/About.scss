@@ -1,7 +1,8 @@
 @use '../Styles/mixin' as *;
 
-:root{
-  --primary:#1e242dcf;
+:root {
+  --primary: #1e242dcf;
+  --secondary:rgba(71, 71, 71, 0.559);
 }
 
 .about-page {
@@ -9,86 +10,208 @@
   width: 100%;
   height: 100%;
   padding: 1rem 0rem;
-  @include display(center,flex-start,column,6.5rem);
+  padding-bottom: 8rem;
+  @include display(center, flex-start, column, 6.5rem);
 
   .about-top-section {
     padding: 4.5rem 1rem;
     width: 100%;
     @include display(center, center, column, 1.5rem);
     background: linear-gradient(to right, #3766e8, #6730ff, #8E1BD6);
-    h1{
+
+    h1 {
       color: white;
       font-size: 3rem;
       font-weight: 400;
+      text-align: center;
     }
-    p{
+
+    p {
       color: white;
       font-size: 1.2rem;
+      text-align: center;
     }
   }
-  .about-mission{
+
+  .about-mission {
     padding: 2.5rem;
     width: 100%;
     max-width: 780px;
-    @include display(flex-start,space-between,column,1.2rem);
+    @include display(flex-start, space-between, column, 1.2rem);
     box-shadow: 0px 10px 20px -5px rgba(60, 60, 60, 0.518);
 
-    .change{
+    .change {
       font-size: 1.1rem;
       line-height: 1.6;
     }
   }
-  .site-values{
+
+  .site-values {
     width: 100%;
-    @include display(center,center,column,2rem);
-    .site-values-heading{
+    @include display(center, center, column, 2rem);
+
+    .site-values-heading {
       width: 100%;
-      @include display(center,center,column,0.8rem);
-      h1{
+      @include display(center, center, column, 0.8rem);
+
+      h1 {
         font-size: 2.2rem;
         font-weight: 500;
         text-transform: capitalize;
       }
-      p{
+
+      p {
         font-size: 0.95rem;
         color: var(--primary);
       }
     }
-    .site-card-holder{
+
+    .site-card-holder {
       width: 100%;
       padding: 0.5rem;
-      @include display(center,center,row,1rem);
+      @include display(center, center, row, 1rem);
       flex-wrap: wrap;
-      .site-card{
+
+      .site-card {
         padding: 2rem 1.5rem;
         width: 100%;
         min-width: 330px;
         max-width: 360px;
-        @include display(center,center,column,1rem);
+        @include display(center, center, column, 1rem);
         border-radius: 15px;
-        box-shadow: 0px 10px 10px -5px rgba(71, 71, 71, 0.559);
-        transition: transform ease-in-out 0.2s 0.3s;
-        .site-card-icon{
+        box-shadow: 0px 10px 10px -5px rgba(71, 71, 71, 0.459);
+        transition: transform ease-in-out 0.2s 0.3s,
+          box-shadow ease 0.1s;
+
+        .site-card-icon {
           width: 65px;
           border-radius: 17px;
           padding: 0.7rem 0.4rem;
           font-size: 2.2rem;
-          @include display(center,center,row,0px);
+          @include display(center, center, row, 0px);
           background: linear-gradient(to right bottom, #3766e8, #571ef7, #8E1BD6);
           color: white;
         }
-        h4{
+
+        h4 {
           font-weight: 500;
         }
-        p{
+
+        p {
           font-size: 0.9rem;
           text-align: center;
           color: var(--primary);
         }
       }
-      .site-card:hover{
+
+      .site-card:hover {
         transform: translateY(-10px);
         box-shadow: 0px 25px 60px -20px rgba(71, 71, 71, 0.559);
+      }
+    }
+  }
+
+  .why-choose-us-section {
+    width: 100%;
+    border-radius: 15px;
+    max-width: 750px;
+    @include display(center, center, column, 1rem);
+    padding: 2rem;
+    box-shadow: 0px 10px 20px -5px rgba(71, 71, 71, 0.459);
+
+    .why-choose-us-heading {
+      width: 100%;
+
+      h3 {
+        width: 100%;
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: 400;
+        text-transform: capitalize;
+      }
+    }
+
+    .why-choose-us-card-section {
+      width: 100%;
+      @include display(flex-start, flex-start, column, 1rem);
+
+      .why-choose-us-card {
+        width: 100%;
+        padding: 0.5rem;
+        @include display(flex-start, flex-start, row, 1rem);
+
+        .complete-icon {
+          font-size: 1.4rem;
+          padding: 0.1rem;
+          color: blue;
+          margin-top: -5px;
+        }
+
+        .card-description {
+          @include display(flex-start, flex-start, column, 0.3rem);
+
+          h3 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            text-transform: capitalize;
+          }
+
+          p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--primary);
+          }
+        }
+      }
+    }
+  }
+  .get-in-touch-section{
+    width: 100%;
+    @include display(center,center,column,4rem);
+    max-width: 750px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px -5px rgba(71, 71, 71, 0.459);
+    padding: 2rem 3rem;
+    padding-bottom: 4rem;
+    .get-in-touch-heading{
+      width: 100%;
+      @include display(center,center,column,1.5rem);
+      h3{
+        font-weight: 400;
+        text-transform: capitalize;
+        font-size: 0.9rem;
+      }
+      p{
+        font-size: 1.1rem;
+        color: var(--primary);
+      }
+    }
+    .get-in-touch-card{
+      width: 100%;
+      @include display(center,center,column,4rem);
+      .card{
+        width: 100%;
+        @include display(center,center,column,0.5rem);
+        h3{
+          font-weight: 400;
+          font-size: 1rem;
+          text-align: center;
+        }
+        p{
+          color: var(--primary);
+          font-size: 0.9rem;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width:700px) {
+  .about-page{
+    .get-in-touch-section{
+      .get-in-touch-card{
+        @include display(center,space-between,row,4rem);
       }
     }
   }

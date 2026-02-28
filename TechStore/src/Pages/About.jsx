@@ -2,6 +2,8 @@ import React from 'react'
 import '../PageCss/About.css'
 import AboutMission from '../Components/AboutMission'
 import SiteValuesSection from '../Components/SiteValuesSection'
+import WhyChooseUs from '../Components/WhyChooseUs'
+import GetInTouchSection from '../Components/GetInTouchSection'
 
 const About = () => {
   return (
@@ -12,6 +14,8 @@ const About = () => {
       </div>
       <AboutMission/>
       <SiteValuesSection/>
+      <WhyChooseUs/>
+      <GetInTouchSection/>
     </div>
   )
 }
