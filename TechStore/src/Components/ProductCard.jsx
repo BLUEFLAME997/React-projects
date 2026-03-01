@@ -14,7 +14,7 @@ const ProductCard = ({element}) => {
         <p className='product-description '>{element.productDescription}</p>
         <div className="product-price-cart">
           <h2>${element.price}</h2>
-          <CartButton />
+          <CartButton id={element.id}/>
         </div>
       </div>
     </div>

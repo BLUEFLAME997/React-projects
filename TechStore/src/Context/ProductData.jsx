@@ -501,10 +501,14 @@ const ProductData = ({ children }) => {
       image: "https://i.pinimg.com/736x/27/39/17/2739171d0c9d068c42c1270f81d9b400.jpg"
     }
   ];
+
   const [isOpen, setIsOpen] = useState(true);
   const [searchButton, setSearchButton] = useState("All Products");
+  const [cart, setCart] = useState(false);
+  const [currentItem, setCurrentItem] = useState(null); 
+
   return (
-    <productDataContext.Provider value={{ isOpen, setIsOpen, products, searchButton, setSearchButton }}>
+    <productDataContext.Provider value={{ isOpen, setIsOpen, products, searchButton, setSearchButton, cart, setCart, currentItem, setCurrentItem }}>
       {children}
     </productDataContext.Provider>
   )

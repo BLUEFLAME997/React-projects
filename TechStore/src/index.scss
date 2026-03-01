@@ -6,6 +6,11 @@
   gap: $gap;
 }
 
+:root {
+  --primary: #1e242dcf;
+  --secondary: rgba(71, 71, 71, 0.559);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -590,6 +595,100 @@ body {
             }
           }
         }
+      }
+      .cart-section{
+        min-width: 300px;
+        width: 100%;
+        max-width: 420px;
+        height: 100vh;
+        position: fixed;
+        z-index: 8;
+        background-color: white;
+        top: 0;
+        right: -440px;
+        transition:  all ease 0.3s;
+        @include display(center,center ,column ,0px );
+        .cart-top{
+          width: 100%;
+          height: 10%;
+          padding: 0rem 1.5rem;
+          background-color: #144fff;
+          @include display(center,space-between ,row ,0px );
+          p{
+            color: white;
+          }
+          button{
+            font-size: 1.4rem;
+            border: none;
+            background-color: transparent;
+            color: white;
+          }
+        }
+        .cart-items-section{
+          width: 100%;
+          height: 90%;
+          padding: 1rem;
+          @include display(center,flex-start ,column ,1rem );
+          overflow: auto;
+          .cart-item{
+            width: 100%;
+            height: 90px;
+            @include display(center,space-between ,row ,0px );
+            .item-image{
+              width: 25%;
+              height: 100%;
+              border-radius: 10px;
+              overflow: hidden;
+              img{
+                width: 100%;
+                height: 100%;
+                // border-radius: 20px;
+                object-fit: cover;
+              }
+            }
+            .item-detail{
+              width: 75%;
+              height: 100%;
+              padding: 0rem 1rem;
+              @include display(flex-start,center ,column ,5px );
+              .item-detail-upper{
+                width: 100%;
+                height: 55%;
+                @include display(flex-start,center ,column ,5px );
+                h3{
+                  font-size: 0.9rem;
+                  font-weight: 400;
+                }
+                p{
+                  color: #144fff;
+                }
+              }
+              .item-detail-lower{
+                width: 100%;
+                height: 45%;
+                @include display(center,space-between ,row ,0px );
+                .lower-left{
+                  width: 40%;
+                  @include display(center,space-around ,row ,0px );
+                  button{
+                    font-size: 1.1rem;
+                    border: none;
+                    background-color: transparent;
+                  }
+                }
+              }
+              button{
+                font-size: 1rem;
+                color: red;
+                border: none;
+                background-color: transparent;
+              }
+            }
+          }
+        }
+      }
+      .cart-section-open{
+        right: 0;
       }
     }
 

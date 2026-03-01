@@ -12,7 +12,10 @@ const NavBar = () => {
       <div className="upper-content">
         <TechStoreLogo/>
         <div className="nav-links">
-          <button className="cart-link">
+          <button className="cart-link"
+          onClick={()=>{
+            data.setCart(true)
+          }}>
             <i className="ri-shopping-cart-2-line"></i>
           </button>
           <button className="nav-button"
