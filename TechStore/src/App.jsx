@@ -14,36 +14,44 @@ const App = () => {
   let itemsArray = [];
   const [cartItem, setCartItem] = useState([]);
   const cartItemIterate = () => {
-    if(data.currentItem===undefined) return;
-    // if(data.currentItem===null) return;
-    let obj;
-    itemsArray = [];
-    if(cartItem.length===0){
-      obj=data.products.find((elem)=>{
-        return data.currentItem===elem.id;
-      })
-      if(!obj) return;
-      itemsArray.push({...obj,count:1});
-      setCartItem([...itemsArray]);
-      return
-    }
-    cartItem.forEach((elem) => {
-      if (elem.id === data.currentItem) {
-        elem.count = elem.count + 1;
+    if (!data.currentItem) return; // same guard check but simplified
+
+    // ✅ Using functional state update (important change)
+    setCartItem((prevCart) => {
+
+      // ✅ Instead of forEach, we use find() to check once
+      const existingItem = prevCart.find(
+        (item) => item.id === data.currentItem
+      );
+
+      if (existingItem) {
+
+        // ✅ Instead of mutating state (elem.count++),
+        // we return a NEW updated array using map()
+        return prevCart.map((item) =>
+          item.id === data.currentItem
+            ? { ...item, count: item.count + 1 } // new object, no mutation
+            : item
+        );
+
       } else {
-        obj = data.products.find((elem) => {
-          return data.currentItem === elem.id;
-        })
-        itemsArray = [...cartItem];
-        itemsArray.push({...obj,count:1});
-        setCartItem([...itemsArray]);
+
+        // ✅ Only add new item if it doesn't already exist
+        const obj = data.products.find(
+          (elem) => elem.id === data.currentItem
+        );
+
+        if (!obj) return prevCart; // safety check
+
+        // ✅ Add new item once (not inside a loop)
+        return [...prevCart, { ...obj, count: 1 }];
       }
-    })
-  }
-  useEffect(()=>{
-    if(data.currentItem===undefined) return;
+    });
+  };
+  useEffect(() => {
+    if (data.currentItem === undefined) return;
     cartItemIterate();
-  },[data.currentItem])
+  }, [data.currentItem])
 
   return (
     <div className='app'>
