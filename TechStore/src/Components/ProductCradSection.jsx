@@ -8,7 +8,9 @@ const ProductCradSection = ({ setTotalItems }) => {
   let count = 0;
   let elemArray = [];
   const [elemRender, setElemRender] = useState([...data.products]);
+
   const productDataCardItems = () => {
+    if(data.search!=='') data.valTrue=true;
     if (data.searchButton === "All Products") {
       for (let i = 0; i < data.products.length; i++) {
         elemArray[i] = data.products[i];
@@ -24,11 +26,13 @@ const ProductCradSection = ({ setTotalItems }) => {
   }
   useEffect(() => {
     productDataCardItems();
-  }, [data.searchButton])
+  }, [data.searchButton,data.search])
 
   return (
     <div className='product-card-section'>
-      {elemRender.map((elem) => {
+      {data.valTrue?data.searchItems.map((elem)=>{
+        return <ProductCard element={elem}/>
+      }):elemRender.map((elem) => {
         return <ProductCard element={elem} />
       })}
     </div>
@@ -36,3 +40,8 @@ const ProductCradSection = ({ setTotalItems }) => {
 }
 
 export default ProductCradSection
+
+
+// elemRender.map((elem) => {
+//         return <ProductCard element={elem} />
+//       })

@@ -7,6 +7,17 @@ import ProductCradSection from '../Components/ProductCradSection'
 const Product = () => {
   const data = useContext(productDataContext);
   const [totalItems,setTotalItems]=useState(data.products.length);
+  let productsArr=[];
+  const changeHandler=(e)=>{
+    productsArr=[];
+    data.setSearch(e.target.value);
+    console.log(data.search);
+    productsArr=data.products.filter((elem)=>{
+      return elem.category.includes(data.search);
+    })
+    console.log(productsArr)
+    data.setSearchItems([...productsArr]);
+  }
 
   return (
     <div className='product-page'>
@@ -17,7 +28,8 @@ const Product = () => {
       </div>
       <div className="search-section">
         <i class="ri-search-line"></i>
-        <input type="text" placeholder='Search Products...'/>
+        <input type="text" placeholder='Search Products...'
+        onChange={changeHandler}/>
       </div>
       <div className="product-search-buttons">
         <button

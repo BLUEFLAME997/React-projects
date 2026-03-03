@@ -506,9 +506,12 @@ const ProductData = ({ children }) => {
   const [searchButton, setSearchButton] = useState("All Products");
   const [cart, setCart] = useState(false);
   const [currentItem, setCurrentItem] = useState(null); 
+  const [search,setSearch]=useState('');
+  const [searchItems,setSearchItems]=useState([]);
+  const [valTrue,setValTrue]=useState(false);
 
   return (
-    <productDataContext.Provider value={{ isOpen, setIsOpen, products, searchButton, setSearchButton, cart, setCart, currentItem, setCurrentItem }}>
+    <productDataContext.Provider value={{ isOpen, setIsOpen, products, searchButton, setSearchButton, cart, setCart, currentItem, setCurrentItem,search,setSearch,searchItems,setSearchItems }}>
       {children}
     </productDataContext.Provider>
   )
