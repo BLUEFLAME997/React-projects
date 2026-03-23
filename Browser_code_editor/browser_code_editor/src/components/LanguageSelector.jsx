@@ -17,7 +17,7 @@ const LanguageSelector = ({language,onSelect}) => {
       <div className={`languages ${open?"open":"close"}`}>
         <ul>
           {languages.map((elem,idx)=>{
-            return <li onClick={()=>{
+            return <li key={idx} onClick={()=>{
               onSelect(elem[0])
               setOpen(!open)
             }}>{elem[0]}<span>{elem[1]}</span></li>

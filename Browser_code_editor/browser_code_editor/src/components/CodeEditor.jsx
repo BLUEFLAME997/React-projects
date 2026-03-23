@@ -2,11 +2,10 @@ import { Box } from '@chakra-ui/react'
 import React, { useEffect, useRef, useState } from 'react'
 import { Editor } from '@monaco-editor/react'
 import { CODE_SNIPPETS } from '../contants'
+import '../style/CodeEditor.scss'
 
-const CodeEditor = ({language}) => {
-  const [values,setValues]=useState('');
-  const editorRef=useRef();
-
+const CodeEditor = ({language,values,setValues,editorRef}) => {
+  
   const onMount=(editor)=>{
     editorRef.current=editor;
     editor.focus();
@@ -23,7 +22,7 @@ const CodeEditor = ({language}) => {
   },[language])
 
   return (
-    <div>
+    <div className='code-editor-container'>
     
       <Editor
         height="90vh"
