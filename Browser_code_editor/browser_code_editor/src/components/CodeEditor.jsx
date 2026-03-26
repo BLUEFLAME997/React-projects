@@ -1,4 +1,3 @@
-import { Box } from '@chakra-ui/react'
 import React, { useEffect, useRef, useState } from 'react'
 import { Editor } from '@monaco-editor/react'
 import { CODE_SNIPPETS } from '../contants'
