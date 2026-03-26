@@ -10,6 +10,7 @@ import { useRef } from 'react'
 const App = () => {
   const [language, setLanguage] = useState('javascript');
   const [values, setValues] = useState('');
+  const [output,setOutput]=useState('');
   const editorRef = useRef();
 
   const handleButtonValue = (data) => {
@@ -22,7 +23,7 @@ const App = () => {
         <LanguageSelector onSelect={handleButtonValue} language={language} />
         <CodeEditor language={language} values={values} setValues={setValues} editorRef={editorRef} />
       </div>
-      <CodeTest editorRef={editorRef} language={language}/>
+      <CodeTest editorRef={editorRef} language={language} output={output} setOutput={setOutput}/>
     </div>
   )
 }
